@@ -1,0 +1,169 @@
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--very-light-gray);
+    min-height: 100svh;
+}
+
+.AI {
+    font-family: Poppins, sans-serif;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.AI__title {
+    color: var(--very-dark-blue);
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+.AI__title-bold {
+    font-weight: 600;
+}
+
+.AI__text {
+    color: var(--grayish-blue);
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.AI__supervisor,
+.AI__teambuilder,
+.AI__karma,
+.AI__calculator {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px 3px hsla(228, 37%, 61%, 0.212);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    padding: 2rem;
+    position: relative;
+    text-align: left;
+}
+
+.AI__supervisor {
+    --top-accent: var(--cyan);
+}
+
+.AI__teambuilder {
+    --top-accent: var(--red);
+}
+
+.AI__karma {
+    --top-accent: var(--orange);
+}
+
+.AI__calculator {
+    --top-accent: var(--blue);
+}
+
+.AI__supervisor::before,
+.AI__teambuilder::before,
+.AI__karma::before,
+.AI__calculator::before {
+    background: linear-gradient(var(--top-accent), var(--top-accent) 60%, white);
+    content: '';
+    height: 6px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.AI__supervisor-title,
+.AI__teambuilder-title,
+.AI__karma-title,
+.AI__calculator-title {
+    color: var(--very-dark-blue);
+    margin-bottom: 1rem;
+}
+
+.AI__supervisor-text,
+.AI__teambuilder-text,
+.AI__karma-text,
+.AI__calculator-text {
+    color: var(--grayish-blue);
+    line-height: 2;
+    margin-bottom: 2rem;
+}
+
+.AI__supervisor-icon,
+.AI__teambuilder-icon,
+.AI__karma-icon,
+.AI__calculator-icon {
+    float: right;
+    position: relative;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+    
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (min-width: 700px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .AI {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .AI__articles {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        max-width: max(600px, 70%);
+    }
+
+    .AI__supervisor {
+        grid-row: 2 / 4;
+        margin: 0;
+    }
+
+    .AI__teambuilder {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        margin: 0;
+    }
+
+    .AI__karma {
+        grid-column: 2 / 3;
+        grid-row: 3 / 5;
+        margin: 0;
+    }
+
+    .AI__calculator {
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+        margin: 0;
+    }
+
+}
